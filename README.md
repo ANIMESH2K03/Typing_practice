@@ -1,4 +1,3 @@
-Typing practice
+# Typing practice
 
-This show random alpabet,
-within 2 second user match the word.
+This show random alpabet and user have 2 second to match it.it show write, wrong ,and timeout points.

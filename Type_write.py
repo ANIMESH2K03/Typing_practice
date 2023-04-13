@@ -11,7 +11,7 @@ def y():
     return random_word
 
 def inp_time():
-    userText, timedOut = timedInput(" : ",timeout=5)
+    userText, timedOut = timedInput(" : ",timeout=2)
     if(timedOut):
         return None
     else:

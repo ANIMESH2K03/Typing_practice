@@ -2,28 +2,41 @@
 
 import random
 import string
+from pytimedinput import timedInput
+import keyboard
 
 def y():
     letters = string.ascii_lowercase
-    random_word = ''.join(random.choice(letters) for i in range(1))
+    random_word =random.choice(letters)
     return random_word
 
-n=0
-o=0
+def inp_time():
+    userText, timedOut = timedInput(" : ",timeout=5)
+    if(timedOut):
+        return None
+    else:
+        return userText
+s = 0
+n = -1
+null = 0
+print("Match within 2 second\nPress Esc for Stop")
+
 while True:
     z = y()
     print(z,end=" ")
-    inp2 = str(input())
-    if inp2 == "end" or inp2 == "stop":
-        break
+    w = inp_time()
+    if z == w:
+        s+=1
+    elif w == None:
+        null+=1
     else:
-        if inp2 == z:
-            n+=1
-        else:
-            o+=1
+        n+=1
+    if keyboard.is_pressed('Esc'):
+        break
 
-print("Total Wrong :",o)
-print("Score : ",n)
+print("\nWrite : ",s)
+print("Wrong : ",n)
+print("Delay : ",null)
 
 # Thank You for observing.
-#               Animesh Malik.
+#               Animesh Malik
